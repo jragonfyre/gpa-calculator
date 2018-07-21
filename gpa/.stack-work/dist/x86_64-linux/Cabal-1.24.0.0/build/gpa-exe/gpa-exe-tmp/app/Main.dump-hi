@@ -1,0 +1,71 @@
+
+==================== FINAL INTERFACE ====================
+2017-01-18 04:19:37.065366 UTC
+
+interface main@main:Main 8001
+  interface hash: 197801ed67e225bff2b1e341f703e66f
+  ABI hash: f2ac78609d617ada938755fd142749da
+  export-list hash: 98ec4c44ef98a0310817be68b4145785
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: aef9f74a174621d9d261adec948c3ccc
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.main
+module dependencies: GPA
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.0.0*
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 directory-1.2.6.2@directory-1.2.6.2
+                      filepath-1.4.1.0@filepath-1.4.1.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1 safe-0.3.10@safe-0.3.10-1VyrsjWhmjvGnGud5lgW7f
+                      time-1.6.0.1@time-1.6.0.1 unix-2.7.2.0@unix-2.7.2.0
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
+import  -/  GPA 104091d83d3611b0448cdedd28668902
+  exports: 36b49c5547585c3a544c18f2e4a41d59
+  main 2e5b148f1c5ea8d169b3fb38fd4f3b0b
+d6831ef04cb9301b090dfae6f7bb7ec7
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Main.$trModule2 Main.$trModule1) -}
+847d9fc3b8e6f0b424199f36b4999bb2
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Main"#) -}
+24ef6042833e75ffd7aa98b83ecca98d
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+66fd83b450c2fd4d97a74bf8b65f9b3a
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                GPA.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+e153d556fa6383138d54bdd7906433de
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   GPA.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

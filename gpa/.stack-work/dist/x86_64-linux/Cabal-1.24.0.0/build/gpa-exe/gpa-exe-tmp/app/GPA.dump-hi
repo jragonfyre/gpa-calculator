@@ -1,0 +1,956 @@
+
+==================== FINAL INTERFACE ====================
+2017-01-18 04:19:36.923193 UTC
+
+interface main@main:GPA 8001
+  interface hash: a2bac2ce8abc9ab5a4176fc49d26e960
+  ABI hash: 104091d83d3611b0448cdedd28668902
+  export-list hash: 36b49c5547585c3a544c18f2e4a41d59
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 5a63d7e0f981c96ffe1c31c111658b66
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  GPA.assignedScoring
+  GPA.average
+  GPA.basicMod
+  GPA.computeGPAs
+  GPA.defaultScoring
+  GPA.filterMap
+  GPA.independentScoring
+  GPA.main
+  GPA.parseGPAs
+  GPA.parseGrade
+  GPA.parseLetter
+  GPA.parseMod
+  GPA.parseRest
+  GPA.score
+  GPA.standardGPABase
+  GPA.standardGPAMod
+  GPA.standardGPAScoring
+  GPA.summify
+  GPA.BaseScoring
+  GPA.GMod{GPA.Flat GPA.Minus GPA.Plus}
+  GPA.Grade{GPA.A GPA.B GPA.C GPA.D GPA.F}
+  GPA.ModScoring
+  GPA.Scoring
+module dependencies:
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.0.0*
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 directory-1.2.6.2@directory-1.2.6.2
+                      filepath-1.4.1.0@filepath-1.4.1.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1 safe-0.3.10@safe-0.3.10-1VyrsjWhmjvGnGud5lgW7f
+                      time-1.6.0.1@time-1.6.0.1 unix-2.7.2.0@unix-2.7.2.0
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+import  -/  base-4.9.0.0:Data.Foldable 8aeb682f6c74f97fcf0ace0d608a43ea
+import  -/  base-4.9.0.0:Data.OldList 0058409f994fb13ae0616e3f1e5b4dae
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:GHC.IO.Handle.FD adf0145182d1c6eb38b2b8ce5a292e84
+import  -/  base-4.9.0.0:GHC.IO.Handle.Text 23b6dc4ed000f42bf105ce56bdeb0dc6
+import  -/  base-4.9.0.0:GHC.IO.IOMode 9380a6a6b8c50facc225c4877c5e1e90
+import  -/  base-4.9.0.0:GHC.List 13d2451194c1c6e53b4f4f07947736dd
+import  -/  base-4.9.0.0:GHC.Num 48f506a8f4ecf06285d0a0706594dcc0
+import  -/  base-4.9.0.0:GHC.Real 08bf4acb5f2508f89d6fbcd57fe232e9
+import  -/  base-4.9.0.0:GHC.Show 952347a6ab730bcb25c0854d8bc6ca51
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  base-4.9.0.0:System.Environment ee0914a962f5508d0fd404c89ee4999b
+import  -/  base-4.9.0.0:System.Exit 4df7be78e54bbe200276120bd44e7e2a
+import  -/  base-4.9.0.0:System.IO eb1d40aa793a4047069a5023f2ebcfe3
+import  -/  directory-1.2.6.2@directory-1.2.6.2:System.Directory f7c57c4a392d1767b38addc37d00ceed
+import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
+import  -/  safe-0.3.10@safe-0.3.10-1VyrsjWhmjvGnGud5lgW7f:Safe 692809ac4c4c5ca03a8a886d48e5198a
+9922d3fef0054765f47f8bc27fbc2d9a
+  $tc'A :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4653449771401421039##
+                   757534127905971991##
+                   GPA.$trModule
+                   GPA.$tc'A1) -}
+d283fd0f76a60b836648f667dc6db9ea
+  $tc'A1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'A"#) -}
+6f9dedac2284ce02462ee5d5c15a7df5
+  $tc'B :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16039004114736835086##
+                   2636701308998812052##
+                   GPA.$trModule
+                   GPA.$tc'B1) -}
+12deef4e6995fabe9d1c664c7eb158ca
+  $tc'B1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'B"#) -}
+af8d84282f6bcd4683535566d8173245
+  $tc'C :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6388393602663804743##
+                   16333277768268841702##
+                   GPA.$trModule
+                   GPA.$tc'C1) -}
+d88252f65471ce45362135b23a285b40
+  $tc'C1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'C"#) -}
+e20b460757dcc9ac19ba017bf070b5a9
+  $tc'D :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4504753107365190890##
+                   3082572880201926104##
+                   GPA.$trModule
+                   GPA.$tc'D1) -}
+e54d33ec71f5afd48c34c8eb1de387db
+  $tc'D1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'D"#) -}
+ee7b1213d033f578b6ccd8a8175edc48
+  $tc'F :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17034391392850016126##
+                   5257152063261257270##
+                   GPA.$trModule
+                   GPA.$tc'F1) -}
+70734aafabdd904b5e0a973fea0a30d1
+  $tc'F1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'F"#) -}
+38f1ea83d217c0230b0c5db0284f0e21
+  $tc'Flat :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17829561777082120587##
+                   1054618719099806012##
+                   GPA.$trModule
+                   GPA.$tc'Flat1) -}
+cccf17523300965a39a5198fcb661b7c
+  $tc'Flat1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Flat"#) -}
+8b07056714ee6920921481eecbf4484d
+  $tc'Minus :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   464826093178840653##
+                   11764500286039529894##
+                   GPA.$trModule
+                   GPA.$tc'Minus1) -}
+a5ffe5beea7a0071fb17e5872a844417
+  $tc'Minus1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Minus"#) -}
+52c8f24c6928afbad6bbff1b79c5b9a1
+  $tc'Plus :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4815950051556964608##
+                   17553173971770266699##
+                   GPA.$trModule
+                   GPA.$tc'Plus1) -}
+7473949992386c7f399dab35c5229126
+  $tc'Plus1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Plus"#) -}
+0216c66d784be6fb36e9bc4f4585b107
+  $tcGMod :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14620259540363336694##
+                   11285024507660667690##
+                   GPA.$trModule
+                   GPA.$tcGMod1) -}
+88eaf3bcdf820d673ce678c6e7cbb2d9
+  $tcGMod1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "GMod"#) -}
+6683d4efa536749bc8e9d44dcd229718
+  $tcGrade :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   13141660203148376673##
+                   6979027019457963207##
+                   GPA.$trModule
+                   GPA.$tcGrade1) -}
+4001c6fcac614187f79a53e814a05e55
+  $tcGrade1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Grade"#) -}
+182f8ca41bbe3857c8ec59cc65b336f9
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module GPA.$trModule2 GPA.$trModule1) -}
+3a917f5d3e04aa1ad1e77afbf2b0ad97
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "GPA"#) -}
+cf295fe47690a037e012ecee18bdef8f
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+035f705744eaeb76501610dc4eabefba
+  $wcomputeGPAs ::
+    GPA.Grade
+    -> GPA.GMod
+    -> GHC.Types.Float
+    -> GHC.Types.Bool
+    -> (# GHC.Types.Float, GHC.Types.Float, GHC.Types.Bool #)
+  {- Arity: 4, HasNoCafRefs, Strictness: <L,1*U><L,1*U><L,U(U)><L,U>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GPA.Grade)
+                   (ww1 :: GPA.GMod)
+                   (ww2 :: GHC.Types.Float)
+                   (ww3 :: GHC.Types.Bool) ->
+                 (# case ww2 of wild { GHC.Types.F# x ->
+                    case ww of wild1 {
+                      GPA.A
+                      -> case ww1 of wild2 {
+                           GPA.Minus -> GHC.Types.F# (GHC.Prim.timesFloat# x 3.7#)
+                           GPA.Plus -> GHC.Types.F# (GHC.Prim.timesFloat# x 4.3#)
+                           GPA.Flat -> GHC.Types.F# (GHC.Prim.timesFloat# x 4.0#) }
+                      GPA.B
+                      -> case ww1 of wild2 {
+                           GPA.Minus -> GHC.Types.F# (GHC.Prim.timesFloat# x 2.7#)
+                           GPA.Plus -> GHC.Types.F# (GHC.Prim.timesFloat# x 3.3#)
+                           GPA.Flat -> GHC.Types.F# (GHC.Prim.timesFloat# x 3.0#) }
+                      GPA.C
+                      -> case ww1 of wild2 {
+                           GPA.Minus -> GHC.Types.F# (GHC.Prim.timesFloat# x 1.7#)
+                           GPA.Plus -> GHC.Types.F# (GHC.Prim.timesFloat# x 2.3#)
+                           GPA.Flat -> GHC.Types.F# (GHC.Prim.plusFloat# x x) }
+                      GPA.D
+                      -> case ww1 of wild2 {
+                           GPA.Minus -> GHC.Types.F# (GHC.Prim.timesFloat# x 0.7#)
+                           GPA.Plus -> GHC.Types.F# (GHC.Prim.timesFloat# x 1.3#)
+                           GPA.Flat -> wild }
+                      GPA.F
+                      -> case ww1 of wild2 {
+                           GPA.Minus -> GHC.Types.F# (GHC.Prim.timesFloat# x -0.3#)
+                           GPA.Plus -> GHC.Types.F# (GHC.Prim.timesFloat# x 0.3#)
+                           GPA.Flat -> GHC.Types.F# (GHC.Prim.timesFloat# x 0.0#) } } },
+                    ww2, ww3 #)) -}
+5bb6a2797aedb4b477dd9e50f5fff875
+  $wstandardGPAScoring :: GPA.Grade -> GPA.GMod -> GHC.Prim.Float#
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>, Inline: [0],
+     Unfolding: (\ (ww :: GPA.Grade) (ww1 :: GPA.GMod) ->
+                 case ww of wild {
+                   GPA.A
+                   -> case ww1 of wild1 {
+                        GPA.Minus -> 3.7# GPA.Plus -> 4.3# GPA.Flat -> 4.0# }
+                   GPA.B
+                   -> case ww1 of wild1 {
+                        GPA.Minus -> 2.7# GPA.Plus -> 3.3# GPA.Flat -> 3.0# }
+                   GPA.C
+                   -> case ww1 of wild1 {
+                        GPA.Minus -> 1.7# GPA.Plus -> 2.3# GPA.Flat -> 2.0# }
+                   GPA.D
+                   -> case ww1 of wild1 {
+                        GPA.Minus -> 0.7# GPA.Plus -> 1.3# GPA.Flat -> 1.0# }
+                   GPA.F
+                   -> case ww1 of wild1 {
+                        GPA.Minus -> -0.3# GPA.Plus -> 0.3# GPA.Flat -> 0.0# } }) -}
+ed79efffd6bed59bc912030ed89be07a
+  $wsummify ::
+    [(GHC.Types.Float, GHC.Types.Float, GHC.Types.Bool)]
+    -> (# GHC.Types.Float, GHC.Types.Float, GHC.Types.Float,
+          GHC.Types.Float #)
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0] -}
+02b0ef4dd4538a9e601b9ca8bd8c80e5
+  type BaseScoring = GPA.Grade -> GHC.Types.Float
+96b094285d7b2ab6d1b27d41f2cb13bd
+  data GMod = Minus | Plus | Flat
+4d9df5eab3180de21e7fdeb15a56d5d2
+  data Grade = A | B | C | D | F
+d9edd52104e9f16e1c9bd23cfd1806e8
+  type ModScoring = GPA.GMod -> GHC.Types.Float
+10f87c13622b5109147490ba7790f911
+  type Scoring = (GPA.Grade, GPA.GMod) -> GHC.Types.Float
+66c26faeaff8de89a6de7f1aa0ddc39d
+  assignedScoring ::
+    (GHC.Types.Float, GHC.Types.Float, GHC.Types.Float,
+     GHC.Types.Float, GHC.Types.Float)
+    -> GPA.BaseScoring
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S,1*U(1*U(U),1*U(U),1*U(U),1*U(U),1*U(U))><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: (GHC.Types.Float, GHC.Types.Float, GHC.Types.Float,
+                           GHC.Types.Float, GHC.Types.Float))
+                   (ds1 :: GPA.Grade) ->
+                 case ds of wild { (,,,,) a b c d f ->
+                 case ds1 of wild1 {
+                   GPA.A -> a GPA.B -> b GPA.C -> c GPA.D -> d GPA.F -> f } }) -}
+e4204be70b3214347a7446faaaea43c3
+  average ::
+    [(GHC.Types.Float, GHC.Types.Float, GHC.Types.Bool)]
+    -> (GHC.Types.Float, GHC.Types.Float)
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: [(GHC.Types.Float, GHC.Types.Float, GHC.Types.Bool)]) ->
+                 case GPA.$wsummify w of ww { (#,,,#) ww1 ww2 ww3 ww4 ->
+                 (GHC.Float.divideFloat ww1 ww3,
+                  GHC.Float.divideFloat ww2 ww4) }) -}
+a7567bcb0c2855c2c4f5e9bf6abed78c
+  basicMod :: GHC.Types.Float -> GPA.ModScoring
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U(U)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (f :: GHC.Types.Float) (ds :: GPA.GMod) ->
+                 case ds of wild {
+                   GPA.Minus -> GHC.Float.negateFloat f
+                   GPA.Plus -> f
+                   GPA.Flat -> GPA.basicMod1 }) -}
+d3bc496780fc8da4facc69f17088d642
+  basicMod1 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.0#) -}
+30c042d4bef4f3e51e2485d4ffdf94e5
+  computeGPAs ::
+    GHC.Base.String -> (GHC.Types.Float, GHC.Types.Float)
+  {- Arity: 1, Strictness: <S,1*U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: GHC.Base.String) -> GPA.average (GPA.computeGPAs1 x)) -}
+4a7f70bbbdfe5dcf8dc2f17652dbe932
+  computeGPAs1 ::
+    GHC.Base.String
+    -> [(GHC.Types.Float, GHC.Types.Float, GHC.Types.Bool)]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: GHC.Base.String) ->
+                 GHC.Base.build
+                   @ (GHC.Types.Float, GHC.Types.Float, GHC.Types.Bool)
+                   (\ @ b1
+                      (c :: (GHC.Types.Float, GHC.Types.Float, GHC.Types.Bool)
+                            -> b1 -> b1)[OneShot]
+                      (n :: b1)[OneShot] ->
+                    GHC.Base.foldr
+                      @ (GPA.Grade, GPA.GMod, GHC.Types.Float, GHC.Types.Bool)
+                      @ b1
+                      (GHC.Base.mapFB
+                         @ (GHC.Types.Float, GHC.Types.Float, GHC.Types.Bool)
+                         @ b1
+                         @ (GPA.Grade, GPA.GMod, GHC.Types.Float, GHC.Types.Bool)
+                         c
+                         GPA.computeGPAs2)
+                      n
+                      (GPA.filterMap
+                         @ GHC.Base.String
+                         @ (GPA.Grade, GPA.GMod, GHC.Types.Float, GHC.Types.Bool)
+                         GPA.parseGPAs
+                         (Data.OldList.lines x)))) -}
+8fec4fc6bc44d461e898874b79d8f0b1
+  computeGPAs2 ::
+    (GPA.Grade, GPA.GMod, GHC.Types.Float, GHC.Types.Bool)
+    -> (GHC.Types.Float, GHC.Types.Float, GHC.Types.Bool)
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(1*U,1*U,U(U),U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: (GPA.Grade, GPA.GMod, GHC.Types.Float, GHC.Types.Bool)) ->
+                 case w of ww { (,,,) ww1 ww2 ww3 ww4 ->
+                 case GPA.$wcomputeGPAs
+                        ww1
+                        ww2
+                        ww3
+                        ww4 of ww5 { (#,,#) ww6 ww7 ww8 ->
+                 (ww6, ww7, ww8) } }) -}
+0c837f459e1b75e7f5de9cfbf1e74a24
+  defaultScoring :: GPA.Scoring
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*U,1*U)>m,
+     Unfolding: InlineRule (0, True, True) GPA.standardGPAScoring -}
+4c6c24cbe72617a21c8b21d0587b63ae
+  filterMap :: (a -> GHC.Base.Maybe b) -> [a] -> [b]
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(U)><S,1*U> -}
+30569ea9495905cca7e9cc38c39068f6
+  independentScoring ::
+    GPA.BaseScoring -> GPA.ModScoring -> GPA.Scoring
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <C(S(S)),1*C1(U(U))><C(S(S)),1*C1(U(U))><S,1*U(U,U)>m,
+     Unfolding: InlineRule (3, True, False)
+                (\ (base :: GPA.BaseScoring)
+                   (mod :: GPA.ModScoring)
+                   (ds :: (GPA.Grade, GPA.GMod)) ->
+                 case ds of wild { (,) grade gmod ->
+                 case base grade of wild1 { GHC.Types.F# x ->
+                 case mod gmod of wild2 { GHC.Types.F# y ->
+                 GHC.Types.F# (GHC.Prim.plusFloat# x y) } } }) -}
+2e5b148f1c5ea8d169b3fb38fd4f3b0b
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                GPA.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+489ecb63896eaf50b413333f22dcd332
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case System.Environment.getArgs1 s of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of wild {
+                   []
+                   -> case GHC.IO.Handle.Text.hGetContents1
+                             GHC.IO.Handle.FD.stdin
+                             ipv of ds2 { (#,#) ipv2 ipv3 ->
+                      GPA.main7 ipv3 ipv2 }
+                   : ds2 ds3
+                   -> case (System.IO.Error.catchIOError
+                              @ GHC.Types.Bool
+                              (\ (s1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                               case System.Posix.Files.getFileStatus1
+                                      ds2
+                                      s1 of ds5 { (#,#) ipv2 ipv3 ->
+                               System.Directory.doesFileExist1 ipv3 ipv2 })
+                                `cast`
+                              (Sym (GHC.Types.N:IO[0] <GHC.Types.Bool>_R))
+                              System.Directory.doesDirectoryExist1
+                                `cast`
+                              (<GHC.IO.Exception.IOError>_R
+                               ->_R Sym (GHC.Types.N:IO[0] <GHC.Types.Bool>_R)))
+                             `cast`
+                           (GHC.Types.N:IO[0] <GHC.Types.Bool>_R)
+                             ipv of ds4 { (#,#) ipv2 ipv3 ->
+                      case ipv3 of wild1 {
+                        GHC.Types.False
+                        -> case GHC.IO.Handle.Text.hPutStr2
+                                  GHC.IO.Handle.FD.stderr
+                                  GPA.main6
+                                  GHC.Types.True
+                                  ipv2 of ds5 { (#,#) ipv4 ipv5 ->
+                           case GHC.Prim.raiseIO#
+                                  @ GHC.Exception.SomeException
+                                  @ GHC.Base.String
+                                  GPA.main3
+                                  ipv4
+                           ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                           of {} }
+                        GHC.Types.True
+                        -> case Control.Exception.Base.bracket1
+                                  @ GHC.IO.Handle.Types.Handle
+                                  @ ()
+                                  @ GHC.Base.String
+                                  (GHC.IO.Handle.FD.openFile1 ds2 GHC.IO.IOMode.ReadMode)
+                                    `cast`
+                                  (Sym (GHC.Types.N:IO[0] <GHC.IO.Handle.Types.Handle>_R))
+                                  GHC.IO.Handle.hClose1
+                                    `cast`
+                                  (<GHC.IO.Handle.Types.Handle>_R
+                                   ->_R Sym (GHC.Types.N:IO[0] <()>_R))
+                                  GPA.main2
+                                    `cast`
+                                  (<GHC.IO.Handle.Types.Handle>_R
+                                   ->_R Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R))
+                                  ipv2 of ds5 { (#,#) ipv4 ipv5 ->
+                           GPA.main7 ipv5 ipv4 } } } } }) -}
+b3d25378e7e3666c7ab18a952ed64fae
+  main2 ::
+    GHC.IO.Handle.Types.Handle
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
+  {- Arity: 2,
+     Unfolding: (\ (handle :: GHC.IO.Handle.Types.Handle)[OneShot]
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        handle
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.List.$wlenAcc @ GHC.Types.Char ipv1 0# of ww2 { DEFAULT ->
+                 ds1 } }) -}
+d3757b7ab77653acba70b81dc18b1282
+  main3 :: GHC.Exception.SomeException
+  {- Unfolding: (GHC.IO.Exception.$fExceptionExitCode_$ctoException
+                   GPA.main4) -}
+b9f4b2c7f60c3389701d15ca178c0f65
+  main4 :: GHC.IO.Exception.ExitCode
+  {- HasNoCafRefs,
+     Unfolding: (GHC.IO.Exception.ExitFailure GPA.main5) -}
+8576a65bd5b318af07f7c9aefee67e5c
+  main5 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 1#) -}
+620d1fdf95eeb13598c1068349cfd546
+  main6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Error file does not exist"#) -}
+13cc57b74c919f2f26f6daf77806dfbc
+  main7 ::
+    GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,1*U><S,U>,
+     Unfolding: (\ (contents :: GHC.Base.String)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 let {
+                   ds :: (GHC.Types.Float, GHC.Types.Float)
+                   = case GPA.$wsummify
+                            (GPA.computeGPAs1 contents) of ww { (#,,,#) ww1 ww2 ww3 ww4 ->
+                     (GHC.Float.divideFloat ww1 ww3, GHC.Float.divideFloat ww2 ww4) }
+                 } in
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (GHC.CString.unpackAppendCString#
+                           "GPA: "#
+                           (case ds of wild { (,) gpa mgpa ->
+                            case gpa of ww { GHC.Types.F# ww1 ->
+                            GHC.Float.$w$sshowSignedFloat1
+                              GHC.Float.$fShowFloat_$sshowFloat
+                              GHC.Show.shows22
+                              ww1
+                              (GHC.Types.[] @ GHC.Types.Char) } }))
+                        GHC.Types.True
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   (GHC.CString.unpackAppendCString#
+                      "Major GPA: "#
+                      (case ds of wild { (,) gpa mgpa ->
+                       case mgpa of ww { GHC.Types.F# ww1 ->
+                       GHC.Float.$w$sshowSignedFloat1
+                         GHC.Float.$fShowFloat_$sshowFloat
+                         GHC.Show.shows22
+                         ww1
+                         (GHC.Types.[] @ GHC.Types.Char) } }))
+                   GHC.Types.True
+                   ipv }) -}
+d5cc46605daf9a6ae94f264de9b3d9ac
+  parseGPAs ::
+    GHC.Base.String
+    -> GHC.Base.Maybe
+         (GPA.Grade, GPA.GMod, GHC.Types.Float, GHC.Types.Bool)
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (str :: GHC.Base.String) ->
+                 case Data.OldList.words str of wild {
+                   []
+                   -> GHC.Base.Nothing
+                        @ (GPA.Grade, GPA.GMod, GHC.Types.Float, GHC.Types.Bool)
+                   : ds1 ds2
+                   -> case GPA.parseGrade ds1 of wild1 {
+                        GHC.Base.Nothing
+                        -> GHC.Base.Nothing
+                             @ (GPA.Grade, GPA.GMod, GHC.Types.Float, GHC.Types.Bool)
+                        GHC.Base.Just x
+                        -> case x of wild2 { (,) g gm ->
+                           case GPA.parseRest ds2 of wild3 {
+                             GHC.Base.Nothing
+                             -> GHC.Base.Nothing
+                                  @ (GPA.Grade, GPA.GMod, GHC.Types.Float, GHC.Types.Bool)
+                             GHC.Base.Just x1
+                             -> case x1 of wild4 { (,) hs maj ->
+                                GHC.Base.Just
+                                  @ (GPA.Grade, GPA.GMod, GHC.Types.Float, GHC.Types.Bool)
+                                  (g, gm, hs, maj) } } } } }) -}
+0edab89f1e39b318352a8dbaf23f6b5d
+  parseGrade ::
+    GHC.Base.String -> GHC.Base.Maybe (GPA.Grade, GPA.GMod)
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: [GHC.Types.Char]) ->
+                 case ds of wild {
+                   [] -> GHC.Base.Nothing @ (GPA.Grade, GPA.GMod)
+                   : lt ds1
+                   -> case ds1 of wild1 {
+                        []
+                        -> case lt of wild2 { GHC.Types.C# ds2 ->
+                           case ds2 of ds3 {
+                             DEFAULT -> GHC.Base.Nothing @ (GPA.Grade, GPA.GMod)
+                             'A'# -> GPA.parseGrade29
+                             'B'# -> GPA.parseGrade27
+                             'C'# -> GPA.parseGrade25
+                             'D'# -> GPA.parseGrade23
+                             'F'# -> GPA.parseGrade21 } }
+                        : md ds2
+                        -> case ds2 of wild2 {
+                             []
+                             -> case lt of wild3 { GHC.Types.C# ds3 ->
+                                case ds3 of ds4 {
+                                  DEFAULT -> GHC.Base.Nothing @ (GPA.Grade, GPA.GMod)
+                                  'A'#
+                                  -> case md of wild4 { GHC.Types.C# ds5 ->
+                                     case ds5 of ds6 {
+                                       DEFAULT -> GHC.Base.Nothing @ (GPA.Grade, GPA.GMod)
+                                       '+'# -> GPA.parseGrade19
+                                       '-'# -> GPA.parseGrade17 } }
+                                  'B'#
+                                  -> case md of wild4 { GHC.Types.C# ds5 ->
+                                     case ds5 of ds6 {
+                                       DEFAULT -> GHC.Base.Nothing @ (GPA.Grade, GPA.GMod)
+                                       '+'# -> GPA.parseGrade15
+                                       '-'# -> GPA.parseGrade13 } }
+                                  'C'#
+                                  -> case md of wild4 { GHC.Types.C# ds5 ->
+                                     case ds5 of ds6 {
+                                       DEFAULT -> GHC.Base.Nothing @ (GPA.Grade, GPA.GMod)
+                                       '+'# -> GPA.parseGrade11
+                                       '-'# -> GPA.parseGrade9 } }
+                                  'D'#
+                                  -> case md of wild4 { GHC.Types.C# ds5 ->
+                                     case ds5 of ds6 {
+                                       DEFAULT -> GHC.Base.Nothing @ (GPA.Grade, GPA.GMod)
+                                       '+'# -> GPA.parseGrade7
+                                       '-'# -> GPA.parseGrade5 } }
+                                  'F'#
+                                  -> case md of wild4 { GHC.Types.C# ds5 ->
+                                     case ds5 of ds6 {
+                                       DEFAULT -> GHC.Base.Nothing @ (GPA.Grade, GPA.GMod)
+                                       '+'# -> GPA.parseGrade3
+                                       '-'# -> GPA.parseGrade1 } } } }
+                             : ipv ipv1 -> GHC.Base.Nothing @ (GPA.Grade, GPA.GMod) } } }) -}
+6d849386b838ec86deb5a1fccbf90914
+  parseGrade1 :: GHC.Base.Maybe (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ (GPA.Grade, GPA.GMod)
+                   GPA.parseGrade2) -}
+883c515358fb12d950344267dd14c37a
+  parseGrade10 :: (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs, Unfolding: ((GPA.C, GPA.Minus)) -}
+798368b23a2b491f438f25e37460f6a1
+  parseGrade11 :: GHC.Base.Maybe (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ (GPA.Grade, GPA.GMod)
+                   GPA.parseGrade12) -}
+47ba577d91855d05c09502cf352e5803
+  parseGrade12 :: (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs, Unfolding: ((GPA.C, GPA.Plus)) -}
+f538f88c5dce0a15d7ec270fafc675f2
+  parseGrade13 :: GHC.Base.Maybe (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ (GPA.Grade, GPA.GMod)
+                   GPA.parseGrade14) -}
+6f11e84bdb2b9a6e6b58a127dfe9bec9
+  parseGrade14 :: (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs, Unfolding: ((GPA.B, GPA.Minus)) -}
+972d8ce1b9898af211ab9301bd8ebec3
+  parseGrade15 :: GHC.Base.Maybe (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ (GPA.Grade, GPA.GMod)
+                   GPA.parseGrade16) -}
+1f6ec8de65ce72ad9eb02614e05184e5
+  parseGrade16 :: (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs, Unfolding: ((GPA.B, GPA.Plus)) -}
+43809d142522d589bece0aa7abbca729
+  parseGrade17 :: GHC.Base.Maybe (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ (GPA.Grade, GPA.GMod)
+                   GPA.parseGrade18) -}
+10585045ae5f86034b69cfe332250a28
+  parseGrade18 :: (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs, Unfolding: ((GPA.A, GPA.Minus)) -}
+a7edcdefbc08f668a914be6650af448d
+  parseGrade19 :: GHC.Base.Maybe (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ (GPA.Grade, GPA.GMod)
+                   GPA.parseGrade20) -}
+18b0158008d7f90b332154e6a6bfcbe7
+  parseGrade2 :: (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs, Unfolding: ((GPA.F, GPA.Minus)) -}
+dad1c9d69531104a8a2a869a525eff7e
+  parseGrade20 :: (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs, Unfolding: ((GPA.A, GPA.Plus)) -}
+d52cbda3d1356ad7f79fb1cd324f13ee
+  parseGrade21 :: GHC.Base.Maybe (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ (GPA.Grade, GPA.GMod)
+                   GPA.parseGrade22) -}
+fa03a9143b0c8f12b183344c122971ba
+  parseGrade22 :: (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs, Unfolding: ((GPA.F, GPA.Flat)) -}
+823c9f6e356718e6ca97ffb9349ee9ab
+  parseGrade23 :: GHC.Base.Maybe (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ (GPA.Grade, GPA.GMod)
+                   GPA.parseGrade24) -}
+67292b2843df9600873bd5b965c3c2ca
+  parseGrade24 :: (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs, Unfolding: ((GPA.D, GPA.Flat)) -}
+93ed870e53d82e7e193bfc93a385ae9b
+  parseGrade25 :: GHC.Base.Maybe (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ (GPA.Grade, GPA.GMod)
+                   GPA.parseGrade26) -}
+81634df8343aefe3bcf780f07f625863
+  parseGrade26 :: (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs, Unfolding: ((GPA.C, GPA.Flat)) -}
+5b13a10b9cd1a792d48e3dbac2c19793
+  parseGrade27 :: GHC.Base.Maybe (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ (GPA.Grade, GPA.GMod)
+                   GPA.parseGrade28) -}
+132ede5387e5cf53339cc5d52abf0ed0
+  parseGrade28 :: (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs, Unfolding: ((GPA.B, GPA.Flat)) -}
+917b6add2634432799362c51d51bf426
+  parseGrade29 :: GHC.Base.Maybe (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ (GPA.Grade, GPA.GMod)
+                   GPA.parseGrade30) -}
+c59f5ba83df4bbaddd77af6a71763c65
+  parseGrade3 :: GHC.Base.Maybe (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ (GPA.Grade, GPA.GMod)
+                   GPA.parseGrade4) -}
+887164184b8561611cfe1c677d32248f
+  parseGrade30 :: (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs, Unfolding: ((GPA.A, GPA.Flat)) -}
+bdec2ffec724b66a7ed3e42bca3cfe3d
+  parseGrade4 :: (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs, Unfolding: ((GPA.F, GPA.Plus)) -}
+ee90fb07c6a94243bb8930720dd7d5df
+  parseGrade5 :: GHC.Base.Maybe (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ (GPA.Grade, GPA.GMod)
+                   GPA.parseGrade6) -}
+98aad8028ea188407f12f25b1f141bef
+  parseGrade6 :: (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs, Unfolding: ((GPA.D, GPA.Minus)) -}
+d5c768d8d03de07a5ee347f5d7c178b7
+  parseGrade7 :: GHC.Base.Maybe (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ (GPA.Grade, GPA.GMod)
+                   GPA.parseGrade8) -}
+299d0ea9bbdd2b0e9516be657f833e9a
+  parseGrade8 :: (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs, Unfolding: ((GPA.D, GPA.Plus)) -}
+da572e5b43b249d324a0a0021de570fe
+  parseGrade9 :: GHC.Base.Maybe (GPA.Grade, GPA.GMod)
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ (GPA.Grade, GPA.GMod)
+                   GPA.parseGrade10) -}
+030d366645daf0635d21a5f490326a58
+  parseLetter :: GHC.Types.Char -> GHC.Base.Maybe GPA.Grade
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: GHC.Types.Char) ->
+                 case ds of wild { GHC.Types.C# ds1 ->
+                 case ds1 of ds2 {
+                   DEFAULT -> GHC.Base.Nothing @ GPA.Grade
+                   'A'# -> GPA.parseLetter5
+                   'B'# -> GPA.parseLetter4
+                   'C'# -> GPA.parseLetter3
+                   'D'# -> GPA.parseLetter2
+                   'F'# -> GPA.parseLetter1 } }) -}
+2f5327968f1aff6035892f18cdbdc708
+  parseLetter1 :: GHC.Base.Maybe GPA.Grade
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Base.Just @ GPA.Grade GPA.F) -}
+0ac7ff6720a0f0617e1639bbf5fd545e
+  parseLetter2 :: GHC.Base.Maybe GPA.Grade
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Base.Just @ GPA.Grade GPA.D) -}
+7a30addd2f6934b16a790024ebb5e3bf
+  parseLetter3 :: GHC.Base.Maybe GPA.Grade
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Base.Just @ GPA.Grade GPA.C) -}
+e41565455eafca8f90e35ad1de5a2040
+  parseLetter4 :: GHC.Base.Maybe GPA.Grade
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Base.Just @ GPA.Grade GPA.B) -}
+bd8bc9b6e15b5b8c657e72e22457730d
+  parseLetter5 :: GHC.Base.Maybe GPA.Grade
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Base.Just @ GPA.Grade GPA.A) -}
+0a2e5bf3a21c99791c0108c693dab5e8
+  parseMod :: GHC.Types.Char -> GHC.Base.Maybe GPA.GMod
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: GHC.Types.Char) ->
+                 case ds of wild { GHC.Types.C# ds1 ->
+                 case ds1 of ds2 {
+                   DEFAULT -> GHC.Base.Nothing @ GPA.GMod
+                   '+'# -> GPA.parseMod2
+                   '-'# -> GPA.parseMod1 } }) -}
+f6a33d0d1f8f984db897119ec596239d
+  parseMod1 :: GHC.Base.Maybe GPA.GMod
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Base.Just @ GPA.GMod GPA.Minus) -}
+827a3d16e2a4c3027370dfbfe131b739
+  parseMod2 :: GHC.Base.Maybe GPA.GMod
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Base.Just @ GPA.GMod GPA.Plus) -}
+3b1b04bbb7a07146432d12a44d3c5ffe
+  parseRest ::
+    [GHC.Base.String]
+    -> GHC.Base.Maybe (GHC.Types.Float, GHC.Types.Bool)
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: [GHC.Base.String]) ->
+                 case ds of wild {
+                   [] -> GPA.parseRest4
+                   : ds1 ds2
+                   -> let {
+                        fail :: GHC.Prim.Void#
+                                -> GHC.Base.Maybe (GHC.Types.Float, GHC.Types.Bool)
+                          {- Arity: 1, Strictness: <L,A> -}
+                        = \ (ds3 :: GHC.Prim.Void#)[OneShot] ->
+                          case ds2 of wild1 {
+                            []
+                            -> case Safe.read_
+                                      @ GHC.Types.Float
+                                      GHC.Read.$fReadFloat
+                                      ds1 of wild2 {
+                                 Data.Either.Left x
+                                 -> GHC.Base.Nothing @ (GHC.Types.Float, GHC.Types.Bool)
+                                 Data.Either.Right y
+                                 -> GHC.Base.Just
+                                      @ (GHC.Types.Float, GHC.Types.Bool)
+                                      (y, GHC.Types.False) }
+                            : ds4 ds5
+                            -> case ds4 of wild2 {
+                                 [] -> GHC.Base.Nothing @ (GHC.Types.Float, GHC.Types.Bool)
+                                 : ds6 ds7
+                                 -> case ds6 of wild3 { GHC.Types.C# ds8 ->
+                                    case ds8 of ds9 {
+                                      DEFAULT
+                                      -> GHC.Base.Nothing @ (GHC.Types.Float, GHC.Types.Bool)
+                                      '!'#
+                                      -> case ds7 of wild4 {
+                                           []
+                                           -> case ds5 of wild5 {
+                                                []
+                                                -> case Safe.read_
+                                                          @ GHC.Types.Float
+                                                          GHC.Read.$fReadFloat
+                                                          ds1 of wild6 {
+                                                     Data.Either.Left x
+                                                     -> GHC.Base.Nothing
+                                                          @ (GHC.Types.Float, GHC.Types.Bool)
+                                                     Data.Either.Right y
+                                                     -> GHC.Base.Just
+                                                          @ (GHC.Types.Float, GHC.Types.Bool)
+                                                          (y, GHC.Types.True) }
+                                                : ipv ipv1
+                                                -> GHC.Base.Nothing
+                                                     @ (GHC.Types.Float, GHC.Types.Bool) }
+                                           : ipv ipv1
+                                           -> GHC.Base.Nothing
+                                                @ (GHC.Types.Float, GHC.Types.Bool) } } } } }
+                      } in
+                      case ds1 of wild1 {
+                        [] -> fail GHC.Prim.void#
+                        : ds3 ds4
+                        -> case ds3 of wild2 { GHC.Types.C# ds5 ->
+                           case ds5 of ds6 {
+                             DEFAULT -> fail GHC.Prim.void#
+                             '!'#
+                             -> case ds4 of wild3 {
+                                  []
+                                  -> case ds2 of wild4 {
+                                       [] -> GPA.parseRest1 : ipv ipv1 -> fail GHC.Prim.void# }
+                                  : ipv ipv1 -> fail GHC.Prim.void# } } } } }) -}
+98682f0531842425c7e0286f081005ff
+  parseRest1 :: GHC.Base.Maybe (GHC.Types.Float, GHC.Types.Bool)
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Base.Just
+                   @ (GHC.Types.Float, GHC.Types.Bool)
+                   GPA.parseRest2) -}
+7186077b7ecb3f13ca9be7e9ab01a191
+  parseRest2 :: (GHC.Types.Float, GHC.Types.Bool)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GPA.parseRest3, GHC.Types.True)) -}
+305aebe62e38217b0ac59b5584941fb3
+  parseRest3 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 1.0#) -}
+e18381f7ad23e6dc8a78653cb9ec209a
+  parseRest4 :: GHC.Base.Maybe (GHC.Types.Float, GHC.Types.Bool)
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Base.Just
+                   @ (GHC.Types.Float, GHC.Types.Bool)
+                   GPA.parseRest5) -}
+c3c3c215bc6b6d9e05959e9b13723a47
+  parseRest5 :: (GHC.Types.Float, GHC.Types.Bool)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GPA.parseRest3, GHC.Types.False)) -}
+10c342d985be2c63e7804eec27a629d2
+  score ::
+    GPA.Scoring
+    -> (GPA.Grade, GPA.GMod, GHC.Types.Float, a)
+    -> (GHC.Types.Float, GHC.Types.Float, a)
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,1*C1(U(U))><S,1*U(U,U,U(U),U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   (f :: GPA.Scoring)
+                   (ds :: (GPA.Grade, GPA.GMod, GHC.Types.Float, a)) ->
+                 case ds of wild { (,,,) x y z w ->
+                 (case z of wild1 { GHC.Types.F# x1 ->
+                  case f (x, y) of wild2 { GHC.Types.F# y1 ->
+                  GHC.Types.F# (GHC.Prim.timesFloat# x1 y1) } },
+                  z, w) }) -}
+a611fc719c9727c4e49bfc9456316c2e
+  standardGPABase :: GPA.BaseScoring
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: GPA.Grade) ->
+                 case ds of wild {
+                   GPA.A -> GPA.standardGPABase3
+                   GPA.B -> GPA.standardGPABase2
+                   GPA.C -> GPA.standardGPABase1
+                   GPA.D -> GPA.parseRest3
+                   GPA.F -> GPA.basicMod1 }) -}
+52f84712eef3a30e3f8e88b1f3543bfe
+  standardGPABase1 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 2.0#) -}
+6d60f123508d506ff2b3a5dad0e0fed1
+  standardGPABase2 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 3.0#) -}
+b7a7f3e0974be200df4323432a60f218
+  standardGPABase3 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 4.0#) -}
+e6411a198ad5b45fc866cf4000905584
+  standardGPAMod :: GPA.ModScoring
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: GPA.GMod) ->
+                 case ds of wild {
+                   GPA.Minus -> GHC.Types.F# -0.3#
+                   GPA.Plus -> GPA.standardGPAMod1
+                   GPA.Flat -> GPA.basicMod1 }) -}
+a5c9b34ad5337e52547fa7dbcd1c1db5
+  standardGPAMod1 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.3#) -}
+8382bcd1da4b6d68df49ec1d2f9abc1f
+  standardGPAScoring :: GPA.Scoring
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*U,1*U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: (GPA.Grade, GPA.GMod)) ->
+                 case w of ww { (,) ww1 ww2 ->
+                 case GPA.$wstandardGPAScoring ww1 ww2 of ww3 { DEFAULT ->
+                 GHC.Types.F# ww3 } }) -}
+1e547d529531c47042e61779e8a74139
+  summify ::
+    [(GHC.Types.Float, GHC.Types.Float, GHC.Types.Bool)]
+    -> (GHC.Types.Float, GHC.Types.Float, GHC.Types.Float,
+        GHC.Types.Float)
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: [(GHC.Types.Float, GHC.Types.Float, GHC.Types.Bool)]) ->
+                 case GPA.$wsummify w of ww { (#,,,#) ww1 ww2 ww3 ww4 ->
+                 (ww1, ww2, ww3, ww4) }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
