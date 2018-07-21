@@ -12,6 +12,7 @@ import Safe (headMay, readMay)
 import System.Exit (exitFailure)
 import System.IO
 import System.Directory (doesFileExist)
+import Data.Maybe (mapMaybe)
 
 data GMod = Minus
           | Plus
@@ -116,16 +117,8 @@ summify ((x,d,False):xs) =
 average :: [(Float,Float,Bool)] -> (Float, Float)
 average = (\(f,g,n,m) -> (f/n,g/m)) . summify
 
-filterMap :: (a -> Maybe b) -> [a] -> [b]
-filterMap _ [] = []
-filterMap f (x:xs) = case f x of
-  Nothing ->
-    filterMap f xs
-  Just b ->
-    b:(filterMap f xs)
-
 computeGPAs :: String -> (Float, Float)
-computeGPAs = average . map (score defaultScoring) . filterMap parseGPAs . lines
+computeGPAs = average . map (score defaultScoring) . mapMaybe parseGPAs . lines
 
 main :: IO ()
 main = do
