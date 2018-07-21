@@ -1,7 +1,0 @@
-module Main where
-
-import Lib
-import qualified GPA
-
-main :: IO ()
-main = GPA.main
